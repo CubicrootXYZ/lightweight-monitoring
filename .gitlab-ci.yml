@@ -16,7 +16,7 @@ test_ci_push:
     - git fetch upstream
     - git checkout upstream/main
     - git merge origin/master --allow-unrelated-histories
-    - git push upstream/main
+    - git push upstream HEAD:main
     - git checkout origin/master
     - git merge upstream/main --allow-unrelated-histories
     - git push HEAD:master
