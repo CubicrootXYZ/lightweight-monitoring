@@ -12,4 +12,10 @@ test_ci_push:
   stage: profiling
   allow_failure: false
   script:
-    - git status
+    - git remote add upstream https://${GITHUB_USERNAME}:${GITHUB_ACCESS_TOKEN}@github.com/CubicrootXYZ/lightweight-monitoring.git
+    - git fetch upstream
+    - git merge master
+    - git push
+    - git checkout master
+    - git merge upstream/master
+    - git push
