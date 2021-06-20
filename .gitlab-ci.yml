@@ -14,7 +14,7 @@ test_ci_push:
   script:
     - git remote set-url upstream https://${GITHUB_USERNAME}:${GITHUB_ACCESS_TOKEN}@github.com/CubicrootXYZ/lightweight-monitoring.git
     - git fetch upstream
-    - git merge master
+    - git merge origin/master
     - git push
     - git checkout master
     - git merge upstream/master
