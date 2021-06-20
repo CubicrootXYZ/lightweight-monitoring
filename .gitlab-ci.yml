@@ -12,6 +12,4 @@ test_ci_push:
   stage: profiling
   allow_failure: false
   script:
-    - git remote set-url origin https://${GITHUB_USERNAME}:${GITHUB_ACCESS_TOKEN}@github.com/CubicrootXYZ/lightweight-monitoring
-    - git pull origin
-    - git push origin HEAD:main
+    - git status
