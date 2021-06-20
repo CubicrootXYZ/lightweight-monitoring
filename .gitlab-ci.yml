@@ -12,6 +12,5 @@ test_ci_push:
   stage: profiling
   allow_failure: false
   script:
-    - git remote rename origin upstream
     - git remote add origin https://${GITHUB_USERNAME}:${GITHUB_ACCESS_TOKEN}@github.com/CubicrootXYZ/lightweight-monitoring
     - git push origin master HEAD:master
