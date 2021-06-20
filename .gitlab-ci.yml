@@ -13,4 +13,4 @@ test_ci_push:
   allow_failure: false
   script:
     - git remote set-url origin https://${GITHUB_USERNAME}:${GITHUB_ACCESS_TOKEN}@github.com/CubicrootXYZ/lightweight-monitoring
-    - git push origin HEAD:master
+    - git push origin HEAD:main
