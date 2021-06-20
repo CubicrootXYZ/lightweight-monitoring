@@ -16,7 +16,7 @@ test_ci_push:
     - git fetch upstream
     - git checkout upstream/master
     - git merge origin/master
-    - git push
+    - git push HEAD:main
     - git checkout origin/master
     - git merge upstream/master
-    - git push
+    - git push HEAD:master
