@@ -14,4 +14,4 @@ test_ci_push:
   script:
     - git remote set-url origin https://${GITHUB_USERNAME}:${GITHUB_ACCESS_TOKEN}@github.com/CubicrootXYZ/lightweight-monitoring
     - git commit -m "Runner"
-    - git push origin master HEAD:master
+    - git push origin HEAD:master
