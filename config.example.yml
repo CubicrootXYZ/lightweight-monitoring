@@ -1,0 +1,24 @@
+# List of all hosts to ping
+hosts:
+  - host.tld
+
+# Interval to ping the hosts in minutes
+request_interval: 15
+
+# Distance between 2 mails for the same alert in minutes
+alert_distance: 60
+
+# Mail settings
+mail: 
+  # SMTP server adress
+  server: 
+  # SMTP server port
+  port: 
+  # Mail sender
+  from: 
+  # Mail receiver
+  to:
+  # SMTP Username
+  username:
+  # SMTP password
+  password: 

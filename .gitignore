@@ -1,2 +1,4 @@
 
 *.code-workspace
+config.yml
+.vscode/settings.json
