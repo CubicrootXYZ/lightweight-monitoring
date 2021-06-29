@@ -2,7 +2,8 @@ default:
   image: docker:latest
 
 stages:
-  - github_sync
+  #- github_sync
+  - build_image
 
 variables:
   TAG_LATEST: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_NAME:latest
@@ -22,3 +23,9 @@ github_sync:
     - git checkout origin/master
     - git merge upstream/main --allow-unrelated-histories
     - git push origin HEAD:master
+
+build_image:
+  stage: build_image
+  allow_failure: false
+  script:
+    - docker build -t cubicrootxyz/leightweight-monitoring .
