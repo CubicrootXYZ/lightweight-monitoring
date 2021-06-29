@@ -2,15 +2,15 @@ default:
   image: docker:latest
 
 stages:
-  - github_sync
-  - build_image
+  - github_push
+  - build
 
 variables:
   TAG_LATEST: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_NAME:latest
   TAG_COMMIT: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_NAME:$CI_COMMIT_SHORT_SHA
 
 github_sync:
-  stage: github_sync
+  stage: github_push
   allow_failure: false
   only:
     - master
@@ -22,7 +22,9 @@ github_sync:
     - git push upstream HEAD:main
 
 build_image:
-  stage: build_image
+  stage: build
   allow_failure: false
   script:
     - docker build -t cubicrootxyz/leightweight-monitoring .
+    - docker login -u="${DOCKERHUB_USERNAME}" -p="${DOCKERHUB_PASSWORD}"
+    - docker push cubicrootxyz/leightweight-monitoring
