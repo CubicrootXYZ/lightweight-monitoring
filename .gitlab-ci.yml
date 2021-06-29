@@ -25,6 +25,6 @@ build_image:
   stage: build
   allow_failure: false
   script:
-    - docker build -t cubicrootxyz/leightweight-monitoring .
+    - docker build -t cubicrootxyz/lightweight-monitoring .
     - docker login -u="${DOCKERHUB_USERNAME}" -p="${DOCKERHUB_PASSWORD}"
-    - docker push cubicrootxyz/leightweight-monitoring
+    - docker push cubicrootxyz/lightweight-monitoring
