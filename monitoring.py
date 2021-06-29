@@ -61,7 +61,7 @@ class Monitor:
     def run(self):
         while True:
             print(
-                "INFO: Checking hosts at {datetime.datetime.now().strftime('%Y-%m-%d %H:%M')}")
+                f"INFO: Checking hosts at {datetime.datetime.now().strftime('%Y-%m-%d %H:%M')}")
             for host in self.config.hosts:
                 status, _ = sp.getstatusoutput("ping -c1 -w2 " + host)
 
